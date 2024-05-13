@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 class MainController extends Controller
 {
     public function index(){
-        echo 'Admin';
+        echo view('admin.home',[
+            'title'=> 'Trang Quan Tri Admin'
+        ]);
     }
 }
