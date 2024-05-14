@@ -23,6 +23,7 @@ class MenuController extends Controller
     }
 
     public function store(CreateFormRequest $request){
+
         $this->menuService->create($request);
         return redirect()->back();
     }
@@ -32,4 +33,5 @@ class MenuController extends Controller
             'menus' => $this->menuService->getAll()
         ]);
     }
+
 }
