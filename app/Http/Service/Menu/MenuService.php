@@ -31,4 +31,25 @@ class MenuService{
         }
         return true;
     }
+
+    public function update($request, $menu){
+        $menu->fill($request->input());
+        $menu->save();
+
+        Session::flash('success','Cap nhat danh muc thanh cong');//Not work
+        return true;
+    }
+
+    public function destroy($request){
+        $id= (int) $request->input('id');
+        $menu = Menu::where('id',$id)->first();
+
+        if ($menu) {
+            return Menu::where('id',$id)->orWhere('parent_id',$id)->delete();
+        }
+
+        return false;
+    }
+
+
 }

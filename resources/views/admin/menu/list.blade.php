@@ -8,7 +8,7 @@
                 <td>Name</td>
                 <td>Active</td>
                 <td>Update</td>
-                <td>&nbsp;</td>
+                <td style="width:100px">&nbsp;</td>
             </tr>
         </thead>
         <tbody>
