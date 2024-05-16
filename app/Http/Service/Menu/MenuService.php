@@ -33,7 +33,18 @@ class MenuService{
     }
 
     public function update($request, $menu){
-        $menu->fill($request->input());
+        // $menu->fill($request->input());
+
+
+        if ($request->input('parent_id') != $menu->id) {
+            $menu->parent_id = (int)$request->input('parent_id');
+        }
+
+        $menu->name = (string) $request->input('name');
+        $menu->description = (string) $request->input('description');
+        $menu->content = (string) $request->input('content');
+        $menu->active = (string) $request->input('active');
+
         $menu->save();
 
         Session::flash('success','Cap nhat danh muc thanh cong');//Not work
