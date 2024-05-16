@@ -14,7 +14,15 @@ class Helper{
                         <td>'. $char . $menu->name .'</td>
                         <td>'. $menu->active .'</td>
                         <td>'. $menu->updated_at .'</td>
-                        <td>&nbsp;</td>
+                        <td>
+                            <a class="btn btn-primary btn-sm" href="/admin/menus/edit/'.$menu->id.'">
+                                <i class="bx bx-edit"></i>
+                            </a>
+                            <a class="btn btn-danger btn-sm"
+                            onclick="removeRow('.$menu->id.', \'/admin/menus/destroy\')">
+                                <i class="bx bxs-trash-alt"></i>
+                            </a>
+                        </td>
                     </tr>
             ';
 
